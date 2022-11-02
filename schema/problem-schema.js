@@ -5,15 +5,15 @@ const schema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    problemURL: {
+    URL: {
         type: String, 
         required: true
     },
-    problemId: {
+    Id: {
         type: String,
         required: true
     },
-    problemName: {
+    Name: {
         type: String,
         required: true
     }
