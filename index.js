@@ -7,6 +7,7 @@ require('dotenv').config();
 const startParser = require('./script/startParser');
 
 function connect() {
+    console.log("started connecting to database");
     mongoose.connect(process.env.MONGO_URI, {
         keepAlive: true,
     }).then(() => {
@@ -15,6 +16,7 @@ function connect() {
 }
 
 function startApp() {
+    console.log("starting app");
     app.use(express.json());
     
     const Router = require("./router/router");
@@ -26,4 +28,6 @@ function startApp() {
 
 connect();
 startApp();
-startParser.main();
+
+setTimeout(startParser.main, 5000);
+
