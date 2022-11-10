@@ -31,7 +31,7 @@ async function addProblem(OJ, data) {
                 oldDataCount = 0;
             }
     
-            if (oldDataCount == 1000) {
+            if (oldDataCount == 200) {
                 throw new Error("Finished");
             }
         }
