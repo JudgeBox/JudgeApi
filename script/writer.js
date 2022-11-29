@@ -3,13 +3,16 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 async function write(data) {
-    await data.save();
+    data.forEach(async ele => {
+        await ele.save();
+    });
 }
 
 async function addProblem(OJ, data) {
     const ProblemSchema = require('../schema/problem-schema');
 
     let oldDataCount = 0;
+    let newData = [];
 
     try {
         for (let i = 0; i < data.length; i++) {
@@ -22,12 +25,12 @@ async function addProblem(OJ, data) {
                 oldDataCount++;
             } else {
                 console.log(URL);
-                await new ProblemSchema({
+                newData.push(new ProblemSchema({
                     OJ: OJ,
                     URL: URL,
                     Id: Id,   
                     Name: Name,
-                }).save();
+                }));
                 oldDataCount = 0;
             }
     
@@ -41,6 +44,9 @@ async function addProblem(OJ, data) {
             console.log(err);
         }
     }
+
+    newData.reverse();
+    write(newData);
 }
 
 module.exports = {
