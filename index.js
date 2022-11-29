@@ -21,7 +21,7 @@ function startApp() {
     
     const Router = require("./router/router");
     
-    app.use("/api/",Router);
+    app.use("/",Router);
     
     app.listen(3000 , () => console.log("server started"))
 }
