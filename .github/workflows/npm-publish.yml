@@ -31,5 +31,6 @@ jobs:
           server: ${{ secrets.ftp_server }}
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_pwd }}
-          local-dir: ./JudgeApi/
+          local-dir: ./
+          server-dir: ./JudgeApi/
 
