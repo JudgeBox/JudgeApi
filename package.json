@@ -8,7 +8,12 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build" : "npm-run-all build:*"
+    "build" : "pkg index.js -t node16-linux -c package.json"
+  },
+  "pkg": {
+    "assets": [
+      "node_modules/**/*"
+    ]
   },
   "homepage": "https://JudgeBox.github.io/JudgeApi"
 }
