@@ -8,7 +8,7 @@ async function main() {
 
     let res = [];
 
-    data.problems.forEach(ele => {
+    await data.problems.forEach(ele => {
         res.push({ URL: `https://codeforces.com/contest/${ele.contestId}/problem/${ele.index}`, Id: ele.contestId + ele.index, Name: ele.name });
     });
 

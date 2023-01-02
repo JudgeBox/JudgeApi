@@ -7,6 +7,8 @@
     "mongoose": "^6.7.0"
   },
   "scripts": {
-    "start": "node index.js"
-  }
+    "start": "node index.js",
+    "build" : "npm-run-all build:*"
+  },
+  "homepage": "https://JudgeBox.github.io/JudgeApi"
 }
