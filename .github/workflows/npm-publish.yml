@@ -18,6 +18,11 @@ jobs:
           node-version: 16
       - name: install
         run: npm install
+      - name: export env
+        env: 
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+        run: |
+          echo "MONGO_URI=$MONGO_URI >> .env"
       - name: build
         run: npm start
       - name: FTP Deploy
