@@ -24,7 +24,7 @@ jobs:
         run: |
           echo "MONGO_URI=$MONGO_URI" >> .env
       - name: build
-        run: npm build
+        run: npm run build
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
