@@ -22,7 +22,7 @@ jobs:
         env: 
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
-          echo "MONGO_URI=$MONGO_URI >> .env"
+          echo "MONGO_URI=$MONGO_URI" >> .env
       - name: build
         run: npm start
       - name: FTP Deploy
