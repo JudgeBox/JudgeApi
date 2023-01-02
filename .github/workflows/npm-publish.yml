@@ -7,6 +7,9 @@ on:
   push: 
     branches: 
     - Koying-dev
+    
+env: 
+  MONGO_URI: ${{ secrets.MONGO_URI }}
 
 jobs:
   build:
@@ -16,15 +19,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          
       - name: install
         run: npm install
-      - name: export env
-        env: 
-          MONGO_URI: ${{ secrets.MONGO_URI }}
-        run: |
-          echo "MONGO_URI=$MONGO_URI" >> .env
+        
       - name: build
         run: npm run build
+        
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
