@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "pkg index.js -t node16-linux -c -d"
+    "build": "pkg index.js -t node16-linux -c"
   },
   "pkg": {
     "assets": [
