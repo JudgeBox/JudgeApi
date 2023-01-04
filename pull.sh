@@ -8,3 +8,4 @@ expect {
 }
 spawn git pull
 expect eof
+ 
