@@ -30,5 +30,3 @@ connect();
 startApp();
 
 setTimeout(startParser.main, 5000);
-
-//testing
